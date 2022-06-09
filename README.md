@@ -39,4 +39,5 @@ El URL sera http://localhost:8082/demo/ (el nuestro .war se llama demo).
 
 ![](https://github.com/ZhijunLin7/Despliegue-de-proyecto-en-Docker./blob/main/Camera%20Roll/1.7.PNG)
 
+Para poder hacer imagen con el docker compose necesitaremos dockerfile
 
