@@ -16,10 +16,10 @@ public class BaseDatos {
     public static String login(String Nom_usuario,String contrasena) throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
 		
-		String url = "jdbc:mysql://localhost:3306/proyectodam";
+		String url = "jdbc:mysql://db:3306/proyectodam";
 		String query = "SELECT id_usuario,Nom_usuario,contrasena FROM usuario where Nom_usuario='"+Nom_usuario+"'";
 		
-		Connection con = DriverManager.getConnection(url, "root", "");
+		Connection con = DriverManager.getConnection(url, "testuser", "root");
 		Statement st = con.createStatement();
 		ResultSet rs = st.executeQuery(query);
 
@@ -40,10 +40,10 @@ public class BaseDatos {
     public static String registrar(String Nom_usuario,String contrasena,String contrasena2) throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
 		
-		String url = "jdbc:mysql://localhost:3306/proyectodam";
+		String url = "jdbc:mysql://db:3306/proyectodam";
         String query = "SELECT id_usuario,Nom_usuario,contrasena FROM usuario where Nom_usuario='"+Nom_usuario+"'";
 
-		Connection con = DriverManager.getConnection(url, "root", "");
+		Connection con = DriverManager.getConnection(url, "testuser", "root");
 		Statement st = con.createStatement();
         ResultSet rs = st.executeQuery(query);
 
@@ -85,10 +85,10 @@ public class BaseDatos {
     public static String info_jugador(String string) throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
 		
-		String url = "jdbc:mysql://localhost:3306/proyectodam";
+		String url = "jdbc:mysql://db:3306/proyectodam";
 		String query ="SELECT * FROM `personaje` join estadistica on estadistica.id_personaje= personaje.id_personaje where personaje.id_personaje="+string+";";
 		
-		Connection con = DriverManager.getConnection(url, "root", "");
+		Connection con = DriverManager.getConnection(url, "testuser", "root");
 		Statement st = con.createStatement();
 		ResultSet rs = st.executeQuery(query);
 
@@ -127,10 +127,10 @@ public class BaseDatos {
         ArrayList<Enemigo> listaEnemigos = new ArrayList<Enemigo>();
         Class.forName("com.mysql.cj.jdbc.Driver");
 
-        String url = "jdbc:mysql://localhost:3306/proyectodam";
+        String url = "jdbc:mysql://db:3306/proyectodam";
         String query = "SELECT * FROM monstruo";
 
-        Connection con = DriverManager.getConnection(url, "root", "");
+        Connection con = DriverManager.getConnection(url, "testuser", "root");
 
         Statement st = con.createStatement();
         ResultSet rs = st.executeQuery(query);
